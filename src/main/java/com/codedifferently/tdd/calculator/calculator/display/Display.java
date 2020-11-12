@@ -1,6 +1,7 @@
 package com.codedifferently.tdd.calculator.calculator.display;
 
 public interface Display {
-    Double getCurrentDisplayValue();
-    void setCurrentDisplayValue();
+    void switchDisplayMode();
+    void switchDisplayMode(String mode);
+    String getCurrentDisplayMode();
 }

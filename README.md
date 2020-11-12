@@ -1,9 +1,9 @@
-# Scientific Calculator 
+# TDD Calculator 
 
 
 ## Description
 
-In this project you will build a small app to function as a calculator. This app  will be built in Java, and will use the topics and techniques discussed during the week.
+In this project you will build a small app to function as a calculator. This app  will be built in Java.
 
 ## Requirements
 
@@ -81,7 +81,4 @@ The following functions should take the displayed value (x) and updated it accor
 - `inverseTangent()`: tan<sup>-1</sup>(x)
 - `factorial()`: x! (x factorial)
 
-## Submission
 
-Completed projects should be submitted by submitting a pull request against the [original repository](https://github.com/hbcustayready/scientific-calculator). All work should be done in your team's repository.
-D
