@@ -1,4 +1,4 @@
-package com.codedifferently.tdd.calculator;
+package com.codedifferently.tdd.calculator.utils;
 
 import java.util.Scanner;
 
