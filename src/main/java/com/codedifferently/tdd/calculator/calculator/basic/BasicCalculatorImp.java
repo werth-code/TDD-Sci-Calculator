@@ -20,26 +20,38 @@ public class BasicCalculatorImp implements Calculator{
     }
 
     protected Double add(Double input){
-        return 0.0;
+        Double sum = memory.recallCurrentValue() + input;
+        memory.setCurrentValue(sum);
+        return sum;
     }
 
     protected Double subtract(Double input){
-        return 0.0;
+        Double difference = memory.recallCurrentValue() - input;
+        memory.setCurrentValue(difference);
+        return difference;
     }
 
     protected Double multiply(Double input){
-        return 0.0;
+        Double product = memory.recallCurrentValue() * input;
+        memory.setCurrentValue(product);
+        return product;
     }
 
     protected Double divide(Double input){
-        return 0.0;
+        Double quotient = memory.recallCurrentValue() / input;
+        memory.setCurrentValue(quotient);
+        return quotient;
     }
 
-    protected Double sq(Double input){
-        return 0.0;
+    protected Double sq(Double input){ //Is this correct?
+        Double sq = input * input;
+        memory.setCurrentValue(sq);
+        return sq;
     }
 
     protected Double sqrt(Double input) {
-        return 0.0;
+        Double sqrt = Math.sqrt(input);
+        memory.setCurrentValue(sqrt);
+        return sqrt;
     }
 }
