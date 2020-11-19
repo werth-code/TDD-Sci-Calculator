@@ -8,17 +8,17 @@ public class MemoryImplementation implements Memory{
     }
 
     @Override
-    public void addToCurrentValue(Double input) {
-
+    public void setCurrentValue(Double input) {
+        this.currentValue = input;
     }
 
     @Override
     public void resetMemory() {
-
+        this.currentValue = 0.0;
     }
 
     @Override
     public Double recallCurrentValue() {
-        return null;
+        return this.currentValue;
     }
 }
