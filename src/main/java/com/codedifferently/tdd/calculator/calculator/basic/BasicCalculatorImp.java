@@ -1,5 +1,7 @@
 package com.codedifferently.tdd.calculator.calculator.basic;
 
+import com.codedifferently.tdd.calculator.calculator.display.Display;
+import com.codedifferently.tdd.calculator.calculator.display.DisplayImplementation;
 import com.codedifferently.tdd.calculator.calculator.memory.Memory;
 import com.codedifferently.tdd.calculator.calculator.memory.MemoryImplementation;
 
@@ -7,9 +9,11 @@ import static com.codedifferently.tdd.calculator.utils.CustomConsole.*;
 
 public class BasicCalculatorImp implements Calculator{
     protected Memory memory;
+    protected Display display;
 
     public BasicCalculatorImp(){
         this.memory = new MemoryImplementation();
+        this.display = new DisplayImplementation();
     }
 
     public void run(){
