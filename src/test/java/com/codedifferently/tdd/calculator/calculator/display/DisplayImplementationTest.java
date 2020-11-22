@@ -18,8 +18,7 @@ public class DisplayImplementationTest {
     @Test
     public void testSwitchDisplayModeFromHEXtoOCT() {
         //GIVEN'
-        displayImplementation.switchDisplayMode("HEXADECIMAL");
-        System.out.println(displayImplementation.getCurrentDisplayMode());
+        displayImplementation.switchDisplayMode("HEXADECIMAL"); ///THIS IS WHAT WAS WRONG!
         displayImplementation.switchDisplayMode();
 
         //WHEN
