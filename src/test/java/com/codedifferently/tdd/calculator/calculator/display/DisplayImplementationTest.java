@@ -1,49 +1,74 @@
 package com.codedifferently.tdd.calculator.calculator.display;
 
-import com.codedifferently.tdd.calculator.calculator.basic.BasicCalculatorImp;
-import com.codedifferently.tdd.calculator.calculator.basic.Calculator;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class DisplayImplementationTest {
 
-    Display display;
+    Display displayImplementation;
 
     @Before
     public void setUp() {
-         display = new DisplayImplementation();
+         displayImplementation = new DisplayImplementation();
+    }
+
+    //    BINARY,DECIMAL,HEXADECIMAL,OCTAL
+
+    @Test
+    public void testSwitchDisplayModeFromHEXtoOCT() {
+        //GIVEN'
+        displayImplementation.switchDisplayMode("HEXADECIMAL");
+        System.out.println(displayImplementation.getCurrentDisplayMode());
+        displayImplementation.switchDisplayMode();
+
+        //WHEN
+        String actual = displayImplementation.getCurrentDisplayMode();
+        String expected = "OCTAL";
+        //THEN
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testSwitchDisplayMode() { //Not sure if this is testing correctly
+    public void testSwitchDisplayModeFromDECtoHEX() { //
         //GIVEN
-        display.switchDisplayMode("HEXADECIMAL");
+        displayImplementation.switchDisplayMode();
         //WHEN
-        display.switchDisplayMode();
-        String actual = display.getCurrentDisplayMode();
+        String actual = displayImplementation.getCurrentDisplayMode();
+        String expected = "HEXADECIMAL";
         //THEN
-        Assert.assertEquals(actual, "BINARY");
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void testTestSwitchDisplayModePassInOctal() {
+        //GIVEN
+        displayImplementation.switchDisplayMode("octal");
+        //WHEN
+        String actual = displayImplementation.getCurrentDisplayMode();
+        String expected = "OCTAL";
+        //THEN
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testTestSwitchDisplayMode() {
+    public void testTestSwitchDisplayModePassInHEXADECIMAL() {
         //GIVEN
-        display.switchDisplayMode("OCTAL");
+        displayImplementation.switchDisplayMode("HEXADECIMAL");
         //WHEN
-        String actual = display.getCurrentDisplayMode();
+        String actual = displayImplementation.getCurrentDisplayMode();
         //THEN
-        Assert.assertTrue(actual == "OCTAL");
+        Assert.assertTrue(actual == "HEXADECIMAL");
     }
 
     @Test
     public void testGetCurrentDisplayMode() {
         //GIVEN
-        display.switchDisplayMode("OCTAL");
+        displayImplementation.switchDisplayMode("OCTAL");
         //WHEN
-        String actual = display.getCurrentDisplayMode();
+        String actual = displayImplementation.getCurrentDisplayMode();
         //THEN
-        Assert.assertEquals(actual, "OCTAL");
+        Assert.assertEquals("OCTAL", actual);
     }
 }

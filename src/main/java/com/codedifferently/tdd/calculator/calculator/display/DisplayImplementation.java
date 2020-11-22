@@ -1,6 +1,8 @@
 package com.codedifferently.tdd.calculator.calculator.display;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DisplayImplementation implements Display{
     private DisplayMode displayMode;
@@ -9,17 +11,23 @@ public class DisplayImplementation implements Display{
         this.displayMode = DisplayMode.DECIMAL;
     }
 
+    //BINARY,DECIMAL,HEXADECIMAL,OCTAL
+
     @Override
     public void switchDisplayMode() {
-        DisplayMode[] values = DisplayMode.values();
-        for(int i = 0; i < values.length; i++) {
-            if(values[i] == values[values.length -1]) displayMode = values[0];
-            else displayMode = values[i + 1];
+        List<DisplayMode> display = new ArrayList<>(Arrays.asList(DisplayMode.values()));
+        for(int i = 0; i < display.size(); i++) {
+            Integer currentDisplay = display.indexOf(displayMode);
+            if(displayMode.equals(display.get(i))) {
+                if(display.indexOf(currentDisplay) == display.size() -1) displayMode = display.get(0);
+                else displayMode = display.get(i + 1);
+                break;
+            }
         }
     }
 
     @Override
-    public void switchDisplayMode(String mode) {
+    public void switchDisplayMode(String mode) { //should just set the stringmode
         DisplayMode[] values = DisplayMode.values();
         for (int i = 0; i < values.length; i++) {
             if (mode.equalsIgnoreCase(values[i].toString())) displayMode = values[i];
@@ -28,7 +36,6 @@ public class DisplayImplementation implements Display{
 
     @Override
     public String getCurrentDisplayMode() {
-        System.out.println(displayMode.toString());
         return displayMode.toString();
     }
 }
