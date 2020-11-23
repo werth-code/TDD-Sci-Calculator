@@ -45,7 +45,7 @@ public class SciCalculatorTest {
     }
 
     @Test
-    public void testSine() {
+    public void testSine() { //IS THIS CORRECT?
         //GIVEN
         Double expectedSine = 1.00;
         Double sineInput = 9.00;
@@ -80,36 +80,36 @@ public class SciCalculatorTest {
     }
 
     @Test
-    public void testInvNatLog() {
-        Double expectedInvNatLog = 0.00;
-        Double invNatLogInput = 9.00;
+    public void testInvNatLog() { ///!!!!!!!!
+        Double expectedInvNatLog = 148.00;
+        Double invNatLogInput = 5.00;
         Double actualInvNatLog = sciCalculator.invNatLog(invNatLogInput);
-        assertEquals(expectedInvNatLog, actualInvNatLog);
+        Assert.assertEquals(expectedInvNatLog, actualInvNatLog);
     }
 
     @Test
     public void testNatLog() {
-        Double expectedNatLog = 0.00;
-        Double natLogInput = 9.00;
-        Double actualNatLog = sciCalculator.invNatLog(natLogInput);
-        assertEquals(expectedNatLog, actualNatLog);
+        Double expectedNatLog = 1.0;
+        Double natLogInput = Math.E;
+        Double actualNatLog = sciCalculator.natLog(natLogInput);
+        Assert.assertEquals(expectedNatLog, actualNatLog);
     }
 
 
     @Test
     public void testLog() {
-        Double expectedLog = 0.00;
-        Double LogInput = 9.00;
+        Double expectedLog = 1.00;
+        Double LogInput = 10.00;
         Double actualLog = sciCalculator.log(LogInput);
         assertEquals(expectedLog, actualLog);
     }
 
     @Test
-    public void testInverseTangent() {
-        Double expectedInverseTangent = 0.00;
-        Double InverseTangentInput = 9.00;
+    public void testInverseTangent() { //!!!!!!!!!
+        Double expectedInverseTangent = 1.00;
+        Double InverseTangentInput = 45.00;
         Double actualInverseTangent = sciCalculator.inverseTangent(InverseTangentInput);
-        assertEquals(expectedInverseTangent, actualInverseTangent);
+        Assert.assertEquals(expectedInverseTangent, actualInverseTangent);
 
     }
 

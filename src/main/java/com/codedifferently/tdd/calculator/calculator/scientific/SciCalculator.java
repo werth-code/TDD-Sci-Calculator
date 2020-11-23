@@ -45,20 +45,21 @@ public class SciCalculator extends BasicCalculatorImp {
         return fact;
     }
 
-    protected Double invNatLog(Double input) {
-        return null;
+    protected Double invNatLog(Double input) { //!!!!!
+        return Math.floor(Math.exp(input));
     }
 
     protected Double natLog(Double input) {
-        return null;
+        return Math.log(input);
     }
 
     protected Double log(Double input) {
-        return null;
+        return Math.log10(input);
     }
 
+    ////!!!!
     protected Double inverseTangent(Double input) {
-        return null;
+        return Math.tan(input);
     }
 
     protected Double inverseCosine(Double input) {
