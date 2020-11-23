@@ -115,32 +115,32 @@ public class SciCalculatorTest {
 
     @Test
     public void testInverseCosine() {
-        Double expectedInverseCosine = 0.00;
-        Double InverseCosineInput = 9.00;
+        Double expectedInverseCosine = 3.14;
+        Double InverseCosineInput = -1.00;
         Double actualInverseCosine = sciCalculator.inverseCosine(InverseCosineInput);
-        assertEquals(expectedInverseCosine, actualInverseCosine);
+        Assert.assertEquals(expectedInverseCosine, actualInverseCosine);
     }
 
     @Test
     public void testInverseSine() {
-        Double expectedInverseSine = 0.00;
-        Double InverseSineInput = 9.00;
+        Double expectedInverseSine = 1.57;
+        Double InverseSineInput = 1.00;
         Double actualInverseSine = sciCalculator.inverseSine(InverseSineInput);
         assertEquals(expectedInverseSine, actualInverseSine);
     }
 
     @Test
     public void testTangent() {
-        Double expectedTangent = 0.00;
-        Double TangentInput = 9.00;
+        Double expectedTangent = 1.55;
+        Double TangentInput = 1.00;
         Double actualTangent = sciCalculator.tangent(TangentInput);
         assertEquals(expectedTangent, actualTangent);
     }
 
     @Test
     public void testCosine() {
-        Double expectedCosine = 0.00;
-        Double CosineInput = 9.00;
+        Double expectedCosine = 0.54;
+        Double CosineInput = 1.00;
         Double actualCosine = sciCalculator.cosine(CosineInput);
         assertEquals(expectedCosine, actualCosine);
     }

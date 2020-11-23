@@ -62,20 +62,20 @@ public class SciCalculator extends BasicCalculatorImp {
     }
 
     protected Double inverseCosine(Double input) {
-        return null;
+        return Math.floor(Math.acos(input) * 100) / 100;
     }
 
     protected Double inverseSine(Double input) {
-        return null;
+        return Math.floor(Math.asin(input) * 100) / 100;
 
     }
 
     protected Double tangent(Double input) {
-        return null;
+        return Math.floor(Math.tan(input) * 100) / 100;
     }
 
     protected Double cosine(Double input) {
-        return null;
+        return Math.floor(Math.cos(input) * 100) / 100;
 
     }
 }
