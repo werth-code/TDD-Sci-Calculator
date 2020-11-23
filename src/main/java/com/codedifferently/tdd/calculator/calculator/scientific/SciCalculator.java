@@ -45,8 +45,8 @@ public class SciCalculator extends BasicCalculatorImp {
         return fact;
     }
 
-    protected Double invNatLog(Double input) { //!!!!!
-        return Math.floor(Math.exp(input));
+    protected Double invNatLog(Double input) {
+        return Math.floor(Math.exp(input) * 100) / 100;
     }
 
     protected Double natLog(Double input) {
@@ -57,9 +57,8 @@ public class SciCalculator extends BasicCalculatorImp {
         return Math.log10(input);
     }
 
-    ////!!!!
     protected Double inverseTangent(Double input) {
-        return Math.tan(input);
+        return Math.floor(Math.atan(input) * 100) / 100;
     }
 
     protected Double inverseCosine(Double input) {

@@ -81,7 +81,7 @@ public class SciCalculatorTest {
 
     @Test
     public void testInvNatLog() { ///!!!!!!!!
-        Double expectedInvNatLog = 148.00;
+        Double expectedInvNatLog = 148.41;
         Double invNatLogInput = 5.00;
         Double actualInvNatLog = sciCalculator.invNatLog(invNatLogInput);
         Assert.assertEquals(expectedInvNatLog, actualInvNatLog);
@@ -106,8 +106,8 @@ public class SciCalculatorTest {
 
     @Test
     public void testInverseTangent() { //!!!!!!!!!
-        Double expectedInverseTangent = 1.00;
-        Double InverseTangentInput = 45.00;
+        Double expectedInverseTangent = 1.47;
+        Double InverseTangentInput = 10.00;
         Double actualInverseTangent = sciCalculator.inverseTangent(InverseTangentInput);
         Assert.assertEquals(expectedInverseTangent, actualInverseTangent);
 
