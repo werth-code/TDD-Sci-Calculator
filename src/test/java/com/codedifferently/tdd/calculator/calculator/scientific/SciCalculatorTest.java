@@ -1,6 +1,7 @@
 package com.codedifferently.tdd.calculator.calculator.scientific;
 
 import com.codedifferently.tdd.calculator.calculator.unit.Unit;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,8 +9,6 @@ import static org.junit.Assert.assertEquals;
 
 public class SciCalculatorTest {
     SciCalculator sciCalculator;
-    private long expectedFactorial;
-    private long expectedInverseCosine;
 
     @Before
     public void setup() {
@@ -17,21 +16,23 @@ public class SciCalculatorTest {
     }
 
     @Test
-    public void testSine() {
-        //GIVEN we have an expected sine with an input
-        Double expectedSine = 0.00;
-        Double sineInput = 9.00;
-        //WHEN we call our method 'sine' to produce an actual result
-        Double actualSine = sciCalculator.sine(sineInput);
-        //THEN -- they should be the same
-        assertEquals(expectedSine, actualSine);
+    public void testGetUnit() {
+        //Given
+        Unit expectedUnit = Unit.DEGREES;
+        //When
+        sciCalculator.switchUnit(expectedUnit);
+        //Then
+        Assert.assertEquals(sciCalculator.getUnit(), expectedUnit);
     }
 
     @Test
     public void testSwitchUnit() {
-        Unit expectedUnit = Unit.DEGREES;
+        //Given
+        Unit expectedUnit = Unit.RADIANS;
+        //When
         sciCalculator.switchUnit(expectedUnit);
-        assertEquals(sciCalculator.getUnit(), expectedUnit);
+        //Then
+        Assert.assertEquals(sciCalculator.getUnit(), expectedUnit);
     }
 
     @Test
@@ -39,19 +40,43 @@ public class SciCalculatorTest {
         Unit expectedUnit = Unit.DEGREES;
         sciCalculator.switchUnit(Unit.RADIANS);
         sciCalculator.switchUnit();
-        assertEquals(sciCalculator.getUnit(), expectedUnit);
+        Assert.assertEquals(sciCalculator.getUnit(), expectedUnit);
 
+    }
+
+    @Test
+    public void testSine() {
+        //GIVEN
+        Double expectedSine = 1.00;
+        Double sineInput = 9.00;
+        //WHEN we call our method 'sine'
+        Double actualSine = sciCalculator.sine(sineInput);
+        //THEN -- they should be the same
+        Assert.assertEquals(expectedSine, actualSine);
     }
 
     @Test
     public void testFactorial() {
         //GIVEN we have an expected sine with an input
-        Double expectedFactorial = 0.00;
-        Double factorialInput = 9.00;
-        //WHEN we call our method 'factorial' to produce an actual result
+        Double expectedFactorial = 5040.00;
+        // 7! 7*6*5*4*3*2*1 = 5040
+        Double factorialInput = 7.00;
+        //WHEN we call our method 'factorial'
         Double actualFactorial = sciCalculator.factorial(factorialInput);
-        //THEN -- they should be the same
-        assertEquals(expectedFactorial, actualFactorial);
+        //THEN
+        Assert.assertEquals(expectedFactorial, actualFactorial);
+    }
+
+    @Test
+    public void testFactorial2() {
+        //GIVEN we have an expected sine with an input
+        Double expectedFactorial = 24.00;
+        // 4! 4*3*2*1 = 24
+        Double factorialInput = 4.00;
+        //WHEN we call our method 'factorial'
+        Double actualFactorial = sciCalculator.factorial(factorialInput);
+        //THEN
+        Assert.assertEquals(expectedFactorial, actualFactorial);
     }
 
     @Test
@@ -62,13 +87,13 @@ public class SciCalculatorTest {
         assertEquals(expectedInvNatLog, actualInvNatLog);
     }
 
-        @Test
-            public void testNatLog() {
-            Double expectedNatLog = 0.00;
-            Double natLogInput = 9.00;
-            Double actualNatLog = sciCalculator.invNatLog(natLogInput);
-            assertEquals(expectedNatLog, actualNatLog);
-        }
+    @Test
+    public void testNatLog() {
+        Double expectedNatLog = 0.00;
+        Double natLogInput = 9.00;
+        Double actualNatLog = sciCalculator.invNatLog(natLogInput);
+        assertEquals(expectedNatLog, actualNatLog);
+    }
 
 
     @Test

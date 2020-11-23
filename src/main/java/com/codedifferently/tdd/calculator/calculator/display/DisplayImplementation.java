@@ -27,7 +27,7 @@ public class DisplayImplementation implements Display{
     }
 
     @Override
-    public void switchDisplayMode(String mode) { //should just set the stringmode
+    public void switchDisplayMode(String mode) {
         DisplayMode[] values = DisplayMode.values();
         for (int i = 0; i < values.length; i++) {
             if (mode.equalsIgnoreCase(values[i].toString())) displayMode = values[i];

@@ -2,7 +2,6 @@ package com.codedifferently.tdd.calculator.utils;
 
 import java.util.Scanner;
 
-
 public class CustomConsole {
 
     private static Scanner scanner = new Scanner(System.in);

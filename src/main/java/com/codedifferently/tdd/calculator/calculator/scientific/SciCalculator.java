@@ -1,68 +1,81 @@
 package com.codedifferently.tdd.calculator.calculator.scientific;
 
 import com.codedifferently.tdd.calculator.calculator.basic.BasicCalculatorImp;
+import com.codedifferently.tdd.calculator.calculator.display.Display;
+import com.codedifferently.tdd.calculator.calculator.display.DisplayImplementation;
+import com.codedifferently.tdd.calculator.calculator.memory.Memory;
+import com.codedifferently.tdd.calculator.calculator.memory.MemoryImplementation;
 import com.codedifferently.tdd.calculator.calculator.unit.Unit;
+
+import java.util.stream.DoubleStream;
+import java.util.stream.LongStream;
 
 public class SciCalculator extends BasicCalculatorImp {
 
     private Unit unit;
 
-    public SciCalculator() {
-        super();
-        /**
-         * Add your constructor code here
-         */
+    public SciCalculator(){
+        this.memory = new MemoryImplementation();
+        this.display = new DisplayImplementation();
+        this.unit = Unit.DEGREES;
     }
 
-    public Double sine(Double input) {
-        return null;
-    }
-
-    public void switchUnit(Unit unitToSwitchTo) {
-        unit = unitToSwitchTo;
-    }
-
-    public Unit getUnit() {
+    protected Unit getUnit() {
         return unit;
     }
 
-    public void switchUnit() {
+    protected void switchUnit(Unit unitToSwitchTo) {
+        unit = unitToSwitchTo;
     }
 
-    public Double factorial(Double input) {
+    protected void switchUnit() {
+        unit = unit.equals(unit.DEGREES) ? Unit.RADIANS : Unit.DEGREES;
+    }
+
+    protected Double sine(Double input) {
+        Double sine = Math.signum(input);
+        return sine;
+    }
+
+    protected Double factorial(Double input) {
+        Double fact = 1.0;
+        for(int i = 2; i <= input; i++) {
+            fact = fact * i;
+        }
+        return fact;
+    }
+
+    protected Double invNatLog(Double input) {
         return null;
     }
 
-    public Double invNatLog(Double input) {
-        return null;
-    }
-    public Double natLog(Double input) {
-        return null;
-    }
-        public Double log(Double input) {
+    protected Double natLog(Double input) {
         return null;
     }
 
-    public Double inverseTangent(Double input) {
+    protected Double log(Double input) {
         return null;
     }
 
-    public Double inverseCosine(Double input) {
+    protected Double inverseTangent(Double input) {
         return null;
     }
 
-    public Double inverseSine(Double input) {
+    protected Double inverseCosine(Double input) {
+        return null;
+    }
+
+    protected Double inverseSine(Double input) {
         return null;
 
     }
 
-    public Double tangent(Double input) {
+    protected Double tangent(Double input) {
         return null;
     }
 
-    public Double cosine(Double input) {
+    protected Double cosine(Double input) {
         return null;
-
 
     }
 }
